@@ -68,7 +68,20 @@ public class PlayerController : MonoBehaviour
             //Activamos su interaccion
             targetInteractableObject.EnableInteraction();
         }
+
+        //Si no hay interaccion al frente
+        else
+        {
+            //Si el dialogo esta activo...
+            if (UIController.Instance.HasDialogueEnabled)
+            {
+                //Interactuamos para desactivarlo
+                UIController.Instance.InteractWithDialogue();
+            }
+        }
+
         
+
     }
 
     //--------------------------------------------------------------------------------------------
